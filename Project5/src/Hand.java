@@ -9,7 +9,7 @@ import java.util.*;
 public class Hand {
 
     /** Number of cards in a poker hand */
-    public static int CARDS_IN_HAND = 5;
+    public static final int CARDS_IN_HAND = 5;
     
     /** Contains cards in hand */
     private Card[] hand;
@@ -51,6 +51,7 @@ public class Hand {
      * 
      * @param index index of the card in the hand
      * @return card from the hand array at index
+     * @throws IllegalArgumentException if invalid index
      */
     public Card getCard(int index) {
     
@@ -101,6 +102,7 @@ public class Hand {
     /**
      * Returns whether this Hand and "o" are equal.
      * 
+     * @param o object to be compared to
      * @return true if equal
                false if not
      */
@@ -114,7 +116,7 @@ public class Hand {
             for (int i = 0; i < CARDS_IN_HAND; i++) {
                 if (hand[i].getValue() != h.hand[i].getValue() || 
                     hand[i].getSuit() != h.hand[i].getSuit()) {
-                        return false;
+                    return false;
                 }
             }
         }
@@ -214,7 +216,7 @@ public class Hand {
     public boolean isRoyalFlush() {
         int[] handCounts = getCounts();
         
-        if (isStraightFlush() && handCounts[Card.HIGHEST_VALUE] == Card.HIGHEST_VALUE) {
+        if (isStraightFlush() && handCounts[Card.HIGHEST_VALUE] == 1) {
             return true;
         }
         
@@ -231,7 +233,7 @@ public class Hand {
     public boolean hasFourOfAKind() {
         int[] handCounts = getCounts();
         for (int i = Card.LOWEST_VALUE; i <= Card.HIGHEST_VALUE; i++) {
-            if (handCounts[i] == 4) {
+            if (handCounts[i] == CARDS_IN_HAND - 1) {
                 return true;
             }
         }
@@ -249,7 +251,7 @@ public class Hand {
     public boolean hasThreeOfAKind() {
         int[] handCounts = getCounts();
         for (int i = Card.LOWEST_VALUE; i <= Card.HIGHEST_VALUE; i++) {
-            if (handCounts[i] == 3) {
+            if (handCounts[i] == CARDS_IN_HAND - 2) {
                 return true;
             }
         }

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests Card class
  * @author Suzanne Balik
- * @author 
+ * @author Will Greene
  */
 public class CardTest {
 

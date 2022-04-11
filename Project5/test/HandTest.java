@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests Hand class
  * @author Suzanne Balik
- * @author 
+ * @author Will Greene
  */
 public class HandTest {
     
@@ -78,7 +78,8 @@ public class HandTest {
         assertFalse(hand.equals(null), "hand compared to null object");
         assertFalse(hand.equals("Hand"), "hand compared to String");
     }
-
+    
+    
     /**
      * Tests the isFlush() method
      */
@@ -89,23 +90,100 @@ public class HandTest {
         Hand flushHand = new Hand(cards);
         assertTrue(flushHand.isFlush(), "Flush hand");
         assertFalse(hand.isFlush(), "Not flush hand");
-    } 
-     
-
-    // TODO: Test isStraight() method
+    }
     
-    // TODO: Test isStraightFlush() method
     
-    // TODO: Test isRoyalFlush() method
+    /**
+     * Tests the isStraight() method
+     */
+    @Test 
+    public void testIsStraight() {
+        Card[] cards = {new Card(2,'c'), new Card(7,'s'), new Card(4,'d'), new Card(5,'d'), 
+                        new Card(6,'s')};
+        Hand notStraightHand = new Hand(cards);
+        assertTrue(hand.isStraight(), "Straight hand");
+        assertFalse(notStraightHand.isStraight(), "Not straight hand");
+    }
     
-    // TODO: Test hasFourOfAKind() method
     
-    // TODO: Test hasThreeOfAKind() method
+    /**
+     * Tests the isStraightFlush() method
+     */
+    @Test 
+    public void testIsStraightFlush() {
+        Card[] cards = {new Card(4,'c'), new Card(3,'c'), new Card(2,'c'), new Card(5,'c'), 
+                        new Card(6,'c')};
+        Hand straightFlushHand = new Hand(cards);
+        assertTrue(straightFlushHand.isStraightFlush(), "Straight flush hand");
+        assertFalse(hand.isStraightFlush(), "Not straight flush hand");
+    }
     
-    // TODO: Test hasTwoPairs() method
-
-    // TODO: Test hasOnePair() method
-
+    
+    /**
+     * Tests the isRoyalFlush() method
+     */
+    @Test 
+    public void testIsRoyalFlush() {
+        Card[] cards = {new Card(10,'h'), new Card(12,'h'), new Card(13,'h'), new Card(11,'h'), 
+                        new Card(14,'h')};
+        Hand royalFlushHand = new Hand(cards);
+        assertTrue(royalFlushHand.isRoyalFlush(), "Royal flush hand");
+        assertFalse(hand.isRoyalFlush(), "Not royal flush hand");
+    }
+    
+    
+    /**
+     * Tests the hasFourOfAKind() method
+     */
+    @Test 
+    public void testHasFourOfAKind() {
+        Card[] cards = {new Card(2,'h'), new Card(2,'d'), new Card(2,'s'), new Card(2,'c'), 
+                        new Card(6,'c')};
+        Hand fourOfAKindHand = new Hand(cards);
+        assertTrue(fourOfAKindHand.hasFourOfAKind(), "Four of a kind hand");
+        assertFalse(hand.hasFourOfAKind(), "Not four of a kind hand");
+    }
+    
+    
+    /**
+     * Tests the hasThreeOfAKind() method
+     */
+    @Test 
+    public void testHasThreeOfAKind() {
+        Card[] cards = {new Card(9,'s'), new Card(9,'d'), new Card(10,'c'), new Card(9,'h'), 
+                        new Card(6,'c')};
+        Hand threeOfAKindHand = new Hand(cards);
+        assertTrue(threeOfAKindHand.hasThreeOfAKind(), "Three of a kind hand");
+        assertFalse(hand.hasThreeOfAKind(), "Not three of a kind hand");
+    }
+    
+    
+    /**
+     * Tests the hasTwoPairs() method
+     */
+    @Test 
+    public void testHasTwoPairs() {
+        Card[] cards = {new Card(3,'h'), new Card(3,'d'), new Card(14,'c'), new Card(12,'c'), 
+                        new Card(14,'s')};
+        Hand twoPairsHand = new Hand(cards);
+        assertTrue(twoPairsHand.hasTwoPairs(), "Two pairs hand");
+        assertFalse(hand.hasTwoPairs(), "Not two pairs hand");
+    }
+    
+    
+    /**
+     * Tests the hasOnePair() method
+     */
+    @Test 
+    public void testHasOnePair() {
+        Card[] cards = {new Card(8,'c'), new Card(3,'c'), new Card(8,'d'), new Card(12,'c'), 
+                        new Card(6,'c')};
+        Hand onePairHand = new Hand(cards);
+        assertTrue(onePairHand.hasOnePair(), "One pair hand");
+        assertFalse(hand.hasOnePair(), "Not one pair hand");
+    }
+    
+    
     /**
      * Tests exceptions
      */

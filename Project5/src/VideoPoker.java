@@ -92,6 +92,7 @@ public class VideoPoker {
     /**
      * Returns the card at the given index in the hand.
      * 
+     * @param index index of the card in the hand
      * @return card at given index in the hand
      */
     public Card getCard(int index) {
@@ -131,6 +132,8 @@ public class VideoPoker {
     /**
      * Returns a String corresponding to the scored hand and 
      * adds the correct number of points to the total points based on the type of hand.
+     * 
+     * @return String representation of scored hand
      */
     public String scoreHand() {
         

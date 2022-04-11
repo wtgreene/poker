@@ -8,7 +8,7 @@ import java.util.Random;
 public class Deck {
 
     /** Number of cards in a deck */
-    public static int CARDS_IN_DECK = 52;
+    public static final int CARDS_IN_DECK = 52;
     
     /** Array of card objects */
     private Card[] cards;
@@ -113,7 +113,7 @@ public class Deck {
             for (int i = 0; i < CARDS_IN_DECK; i++) {
                 if (cards[i].getValue() != d.cards[i].getValue() || 
                     cards[i].getSuit() != d.cards[i].getSuit()) {
-                        return false;
+                    return false;
                 }
             }
             

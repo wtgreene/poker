@@ -57,6 +57,7 @@ public class Card implements Comparable<Card> {
     
     /**
      * Returns card value.
+     * 
      * @return card value
      */
     public int getValue() {
@@ -65,6 +66,7 @@ public class Card implements Comparable<Card> {
     
     /**
      * Returns card suit.
+     * 
      * @return card suit
      */
     public char getSuit() {
@@ -73,6 +75,8 @@ public class Card implements Comparable<Card> {
     
     /**
      * Returns whether the current object and parameter object are equal.
+     * 
+     * @param o object to be compared to
      * @return true if equal and
                false if not
      */
@@ -89,7 +93,7 @@ public class Card implements Comparable<Card> {
     
     /**
      * Returns card value and suit in the form of a String.
-     
+     * 
      * @return card value and suit
      */
     public String toString() {
