@@ -133,7 +133,7 @@ public class VideoPoker {
      * adds the correct number of points to the total points based on the type of hand.
      */
     public String scoreHand() {
-    
+        
         if (hand.isRoyalFlush()) {
             points += ROYAL_FLUSH;
             return "Royal Flush";

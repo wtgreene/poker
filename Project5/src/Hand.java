@@ -100,6 +100,7 @@ public class Hand {
     
     /**
      * Returns whether this Hand and "o" are equal.
+     * 
      * @return true if equal
                false if not
      */
@@ -176,7 +177,7 @@ public class Hand {
                false if not
      */
     public boolean isStraight() {
-        getSortedHand();
+        hand = getSortedHand();
         for (int i = 1; i < CARDS_IN_HAND; i++) {
             if (hand[i].getValue() != hand[i - 1].getValue() + 1) {
                 return false;

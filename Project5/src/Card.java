@@ -25,10 +25,10 @@ public class Card implements Comparable<Card> {
     /** Lowest value */
     public static final int HIGHEST_VALUE = 14;
     
-    /** card's value (jack - 11, queen - 12, king - 13, ace - 14) */
+    /** Card's value (jack - 11, queen - 12, king - 13, ace - 14) */
     private int value;
     
-    /** card's suit */
+    /** Card's suit */
     private char suit;
     
     /**
