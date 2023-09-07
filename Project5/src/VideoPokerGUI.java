@@ -11,10 +11,10 @@ import java.awt.event.*;
 public class VideoPokerGUI extends JFrame implements ActionListener {
 
     /** Width of GUI */
-    public static final int WIDTH = 480;
+    public static final int WIDTH = 800; // 480 is original
 
     /** Height of GUI */
-    public static final int HEIGHT = 315;
+    public static final int HEIGHT = 800; // 315 is original
 
     /** x coordinate of upper lefthand corner of GUI */
     public static final int X = 100;
