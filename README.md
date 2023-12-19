@@ -2,5 +2,5 @@
 
 ## How It's Made :
 
-### **Tech used :** Java
-### Utilized for loops, etc.
+#### **Tech used :** Java
+#### Utilized for loops, etc.
